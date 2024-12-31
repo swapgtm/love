@@ -1,85 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love You Forever</title>
-    <style>
-        /* Basic page styles */
-        body {
-            font-family: Arial, sans-serif;
-            background: url('your-background-image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-        }
+<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>This one is for my Sunnu</title>
 
-        #content {
-            padding: 20px;
-        }
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
 
-        #loveHeart {
-            width: 100px;
-            height: 100px;
-            background: url('heart-image.png') no-repeat center center;
-            background-size: contain;
-            margin: 0 auto;
-        }
-
-        /* Hide video modal initially */
-        #videoModal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .modal-content {
-            position: relative;
-            margin: 10% auto;
-            padding: 20px;
-            width: 80%;
-            background-color: #fff;
-        }
-
-        /* Close button styles */
-        .close {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            color: #aaa;
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* Play button style */
-        #playButton {
-            background-color: #ff4b5c;
-            border: none;
-            padding: 10px 20px;
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        #playButton:hover {
-            background-color: #d84e56;
-        }
-    </style>
 </head>
-	
+
 <body>
 
 <div id="mainDiv">
@@ -89,7 +27,7 @@
 			<span class="space"/><span class="comments">*2025) HAPPY NEW YEAR</span><br />
 			<span class="space"/><span class="comments">*/My Dearest Sunnu , swati ji 😅 </span><br />
 			mera kuchu puchu <br />
-			mera jannu mannu,<br />
+			Sunnu,<br />
 			<span class="comments">/**</span><br />
 <span class="space"/><span class="comments">*HAPPY NEW YEAR WISHES</span><br />
 <span class="space"/><span class="comments">*/</span><br />
@@ -173,80 +111,41 @@ or han kuch bate or bhi sun le kamini <br />
 				</div>
 			</div>
 		</div>
-	        <div style="text-align: center; margin-top: 20px;">
-                <button id="playButton" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Click to Play Video</button>
-                </div>
 	</div>
 </div>
-<!-- Video Popup (Modal) -->
- <div id="videoModal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <video width="100%" controls>
-                <source src="your-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
- <script type="text/javascript">
-        // Get modal
-        var modal = document.getElementById("videoModal");
 
-        // Get the button that opens the modal
-        var btn = document.getElementById("playButton");
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2024, 8, 23);
+together.setHours(04);
+together.setMinutes(32);
+together.setSeconds(0);
+together.setMilliseconds(0);
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
 
-        // When the user clicks the button, open the modal
-        btn.onclick = function() {
-            modal.style.display = "block"; // Show the modal when button is clicked
-        }
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none"; // Close the modal
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none"; // Close the modal if clicked outside
-            }
-        }
-
-        // Heart animation and time elapse code (remains unchanged)
-        var offsetX = $("#loveHeart").width() / 2;
-        var offsetY = $("#loveHeart").height() / 2 - 55;
-        var together = new Date();
-        together.setFullYear(2024, 8, 23);
-        together.setHours(04);
-        together.setMinutes(32);
-        together.setSeconds(0);
-        together.setMilliseconds(0);
-
-        if (!document.createElement('canvas').getContext) {
-            var msg = document.createElement("div");
-            msg.id = "errorMsg";
-            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
-            document.body.appendChild(msg);
-            $("#code").css("display", "none");
-            $("#copyright").css("position", "absolute");
-            $("#copyright").css("bottom", "10px");
-            document.execCommand("stop");
-        } else {
-            setTimeout(function () {
-                startHeartAnimation();
-            }, 5000);
-
-            timeElapse(together);
-            setInterval(function () {
-                timeElapse(together);
-            }, 500);
-
-            adjustCodePosition();
-            $("#code").typewriter();
-        }
-    </script>
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
 </body>
 </html>
