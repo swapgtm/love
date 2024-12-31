@@ -74,18 +74,59 @@
 			<br>
 			<br>Now If you want to Kiss me, you can touch the heart below<br>
 				<br>
-			<span id="heartspan">
-			<i class="fas fa-heart" id="icon"></i>
-			</span>
-			<video id="heartVideo" width="600" height="400" controls style="display:none;">
-			<source src="kis.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video>
-			<script type="text/javascript">
-			$("#icon").click(function() {
-			$("#heartVideo").toggle(); 
-			});
-			</script>
+			<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-y: auto; /* Allow vertical scrolling */
+        font-family: Arial, sans-serif;
+    }
+
+    #heartspan {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #icon {
+        font-size: 48px;
+        color: red;
+        cursor: pointer;
+    }
+
+    #heartVideo {
+        display: none;
+        margin: 20px auto;
+    }
+</style>
+
+<div id="mainDiv">
+    <div id="content">
+        <!-- Other content goes here -->
+        <br>
+        Now If you want to Kiss me you can touch the heart below
+        <br>
+        <span id="heartspan">
+            <i class="fas fa-heart" id="icon"></i>
+        </span>
+        <video id="heartVideo" width="600" height="400" controls>
+            <source src="kis.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // Make sure the heart icon toggles the video
+    $("#icon").click(function () {
+        $("#heartVideo").toggle();
+        if ($("#heartVideo").is(":visible")) {
+            $("#heartVideo")[0].play();
+        } else {
+            $("#heartVideo")[0].pause();
+        }
+    });
+</script>
 		</div>
 		<div id="loveHeart">
 			<canvas id="garden"></canvas>
