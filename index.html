@@ -74,7 +74,9 @@
 			<br>
 			<br>Now If you want to Kiss me, you can touch the heart below<br>
 			<br>
-			<style>
+			<span id="heartspan">
+				<i class="fas fa-heart" id="icon"></i>
+			</span>
 		</div>
 		<div id="loveHeart">
 			<canvas id="garden"></canvas>
@@ -92,6 +94,10 @@
 		</div>
 	</div>
 </div>
+<video id="videoPlayer" width="640" height="360" style="display:none" controls>
+  <source src="kis.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 <script type="text/javascript">
 var offsetX = $("#loveHeart").width() / 2;
