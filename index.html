@@ -72,12 +72,20 @@
 				With all my love, Swapnil 💖<br />
 				Love you so much! ❤️<br />
 			<br>
-			<br>
-			Now If you want to hug me you can touch the heart below<br />
-			<br>
+			<br>Now If you want to Kiss me, you can touch the heart below<br>
+				<br>
 			<span id="heartspan">
-			<a href="image.jpg"><i class="fas fa-heart" id="icon"></i></a>
+			<i class="fas fa-heart" id="icon"></i>
 			</span>
+			<video id="heartVideo" width="600" height="400" controls style="display:none;">
+			<source src="kis.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+			</video>
+			<script type="text/javascript">
+			$("#icon").click(function() {
+			$("#heartVideo").toggle(); 
+			});
+			</script>
 		</div>
 		<div id="loveHeart">
 			<canvas id="garden"></canvas>
